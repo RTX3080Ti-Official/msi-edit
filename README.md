@@ -5,7 +5,7 @@
 MsiEdit is a lightweight app made in C++ that allows you to modify MSI files easier than ever.
 
 ## Planned features
-- [] Reading MSI files
+- [ ] Reading MSI files
     - [X] Windows
-    - [] Linux/MacOS
-- [] Editing MSI files
+    - [ ] Linux/MacOS
+- [ ] Editing MSI files
