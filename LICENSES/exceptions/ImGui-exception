@@ -1,0 +1,1 @@
+This project provides permission to link against the Dear ImGui library and its backends without the resulting combined executable being subject to the full requirements of the GPLv2, provided the MIT license of Dear ImGui is respected. You can check it's license at LICENSES/3rdparty/MIT.

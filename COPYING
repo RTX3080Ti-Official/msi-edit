@@ -1,0 +1,22 @@
+The MsiEdit software is provided under:
+
+	SPDX-License-Identifier: GPL-2.0-only WITH ImGui-exception
+
+Being under the terms of the GNU General Public License version 2 only,
+according with:
+
+	LICENSES/preferred/GPL-2.0
+
+With an explicit linking exception for the Dear ImGui library, as 
+stated at:
+
+	LICENSES/exceptions/ImGui-exception
+
+In addition, other licenses apply to specific components (e.g., Dear ImGui
+is provided under the MIT license). Please see:
+
+	Documentation/process/license-rules.rst
+
+for more details.
+
+All contributions to this project are subject to this COPYING file.
