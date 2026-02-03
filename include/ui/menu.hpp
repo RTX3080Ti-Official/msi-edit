@@ -2,6 +2,7 @@
 // Copyright (C) 2026 RTX3080Ti <rtx3080ti0415@gmail.com>
 
 #pragma once
+extern bool g_ShowConfigDialog;
 
 #include "imgui.h"
 #include "imgui_impl_glfw.h"

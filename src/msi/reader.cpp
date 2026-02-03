@@ -1,3 +1,13 @@
+// SPDX-License-Identifier: GPL-2.0-only
+// Copyright (C) 2026 RTX3080Ti <rtx3080ti0415@gmail.com>
+/*
+Please dont, just turn back, this code is fucking HORRIBLE.
+Why did they make MSI reading so hard without Microsoft-specific
+libraries.
+Really if you wanna look at this code be prepared to vomit.
+Best regards, RTX3080Ti.
+*/
+
 #include "msi/reader.hpp"
 
 #ifdef _WIN32
@@ -14,6 +24,7 @@
         if (MsiOpenDatabaseA(filePath.c_str(), MSIDBOPEN_READONLY, &hDatabase) != ERROR_SUCCESS)
             return "Error: Open Failed";
 
+        // Yes, MSIs are just SQL databases disguised, why? I don't know, ask them not me.
         const char* sql = "SELECT `Value` FROM `Property` WHERE `Property` = 'ProductName'";
         if (MsiDatabaseOpenViewA(hDatabase, sql, &hView) == ERROR_SUCCESS) {
             MsiViewExecute(hView, 0);

@@ -5,6 +5,7 @@
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
 #include "ui/menu.hpp"
+#include "ui/dialog.hpp"
 #include <GLFW/glfw3.h>
 
 Menu::Menu() {
@@ -19,6 +20,7 @@ void Menu::create() {
             }
             if (ImGui::MenuItem("Open...", "Ctrl+O")) { 
                 /* Handle Open */ 
+                g_ShowConfigDialog = true;
             }
             ImGui::Separator();
             if (ImGui::MenuItem("Exit", "Alt+F4")) { 

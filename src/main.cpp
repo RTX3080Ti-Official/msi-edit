@@ -6,14 +6,16 @@
 #include "imgui_impl_opengl3.h"
 #include "ui/home.hpp"
 #include "ui/menu.hpp"
+#include "ui/dialog.hpp"
 #include "msi/MsiFile.hpp"
 #include <GLFW/glfw3.h>
 
 GLFWwindow* window;
+bool g_ShowConfigDialog = false;
 
 bool init() {
     if (!glfwInit()) return false;
-    window = glfwCreateWindow(1280, 720, "Modern C++ UI", NULL, NULL);
+    window = glfwCreateWindow(1280, 720, "MsiEdit", NULL, NULL);
     glfwMakeContextCurrent(window);
     glfwSwapInterval(1);
 
@@ -46,8 +48,16 @@ int main() {
 
         Home homeView;
         Menu menuView;
-
+        Dialog dialogView;
+        
         menuView.create();
+
+        if (g_ShowConfigDialog) {
+            ImGui::OpenPopup("No config file has been found.");
+            g_ShowConfigDialog = false;
+        }
+
+        dialogView.render(0);
         homeView.create();
 
         ImGui::Render();

@@ -33,6 +33,7 @@ set(PROJECT_SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ui/home.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ui/menu.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ui/dialog.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/msi/MsiFile.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/msi/reader.cpp
 )
@@ -55,3 +56,11 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     glfw 
     OpenGL::GL
 )
+
+target_compile_options(${PROJECT_NAME} PRIVATE 
+        -Wall
+        -Wextra
+        -Wpedantic
+        -Wshadow
+        -Wformat=2
+    )
