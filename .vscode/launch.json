@@ -8,7 +8,7 @@
             "name": "(Windows) Launch",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/ImGuiExample.exe",
+            "program": "${workspaceFolder}/build/MsiEdit.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
