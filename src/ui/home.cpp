@@ -6,6 +6,7 @@
 #include "imgui_impl_opengl3.h"
 #include "ui/home.hpp"
 #include <GLFW/glfw3.h>
+#include "home.hpp"
 
 Home::Home() {
 
@@ -13,6 +14,15 @@ Home::Home() {
 
 void Home::create() {
     ImGui::Begin("Dashboard");
+    ImGui::Text("Welcome to your custom C++ App");
+    if (ImGui::Button("Action Button", ImVec2(120, 40))) {
+
+    }
+    ImGui::End();
+}
+
+void Home::createInfo() {
+    ImGui::Begin("File Info");
     ImGui::Text("Welcome to your custom C++ App");
     if (ImGui::Button("Action Button", ImVec2(120, 40))) {
 

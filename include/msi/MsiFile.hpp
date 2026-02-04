@@ -13,7 +13,7 @@ public:
 };
 
 struct MsiFileContent {
-    std::string name;
+    std::string productName;
 };
 
 struct MsiFileData {

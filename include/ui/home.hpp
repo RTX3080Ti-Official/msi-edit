@@ -12,4 +12,5 @@ class Home {
 public:
     Home();
     void create();
+    void createInfo();
 };
