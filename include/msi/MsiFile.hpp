@@ -6,18 +6,23 @@
 #include <cstring>
 #include <string>
 
-class MsiFile {
-public:
-    MsiFile();
-    void create(std::string filePath);
-};
-
 struct MsiFileContent {
     std::string productName;
+    std::string productVersion;
+    std::string productUrl;
+    std::string productContact;
+    std::string productComments;
+    std::string productCode;
 };
 
 struct MsiFileData {
     std::string filePath;
     bool wasEdited;
     MsiFileContent content;
+};
+class MsiFile {
+public:
+    MsiFile();
+    MsiFileData create(std::string filePath);
+    MsiFileContent createFileContent(std::string filePath);
 };

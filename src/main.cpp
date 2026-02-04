@@ -12,6 +12,7 @@
 
 GLFWwindow* window;
 bool g_ShowConfigDialog = false;
+bool g_IsMsiOpen = false;
 
 bool init() {
     if (!glfwInit()) return false;
@@ -28,7 +29,6 @@ bool init() {
 int main() {
     if (!init()) return 0;
     MsiFile file;
-    file.create(R"(C:\Users\yoann.degardin\Downloads\gh_2.86.0_windows_amd64.msi)");
     
     auto& style = ImGui::GetStyle();
     style.WindowRounding = 8.0f;
@@ -58,7 +58,7 @@ int main() {
         }
 
         dialogView.render(0);
-        homeView.create();
+        homeView.create(file.createFileContent(R"(C:\Users\yoann.degardin\Downloads\gh_2.86.0_windows_amd64.msi)"));
 
         ImGui::Render();
         glClear(GL_COLOR_BUFFER_BIT);

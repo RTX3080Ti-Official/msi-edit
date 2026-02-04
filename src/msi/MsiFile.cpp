@@ -10,9 +10,21 @@ MsiFile::MsiFile() {
 
 }
 
-void MsiFile::create(std::string filePath) {
+MsiFileData MsiFile::create(std::string filePath) {
     MsiFileData data;
     data.filePath = filePath;
-    std::string name = GetMsiProductName(filePath);
-    printf(name.c_str());
+    data.wasEdited = true;
+    data.content = createFileContent(filePath);
+    return data;
+}
+
+MsiFileContent MsiFile::createFileContent(std::string filePath) {
+    MsiFileContent content;
+    content.productName = GetMsiProductName(filePath);
+    content.productUrl = GetMsiProductUrl(filePath);
+    content.productVersion = GetMsiProductVersion(filePath);
+    content.productContact = GetMsiProductContact(filePath);
+    content.productComments = GetMsiProductComments(filePath);
+    content.productCode = GetMsiProductCode(filePath);
+    return content;
 }

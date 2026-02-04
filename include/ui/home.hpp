@@ -6,11 +6,12 @@
 #include "imgui.h"
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
+#include "msi/MsiFile.hpp"
 #include <GLFW/glfw3.h>
 
 class Home {
 public:
     Home();
-    void create();
-    void createInfo();
+    void create(MsiFileContent content);
+    void createInfo(MsiFileContent msiFile);
 };
